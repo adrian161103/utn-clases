@@ -1,16 +1,22 @@
-body{
-    background-image: url(./prote.jpg) ;
+
+body{  
+    background: url(./prote.jpg) no-repeat center center / cover;
+    margin: 0px;
+    padding: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
 }
 
-
 .heading{
-    color: rgb(255, 3, 242);
+    color: rgb(68, 66, 66);
     font-family: fantasy ;
     text-align: center;
 }
 
 h1{
     font-size: 50px;
+   background: white;
 }
 .heading-h2{
     font-size: 83px;
@@ -18,9 +24,11 @@ h1{
 
 #h2-ID{
     color: red;
+    background: white;
 }
  span{
     color: rgb(89, 0, 255);
+    background: white;
  }
  
  .span-rojo{
