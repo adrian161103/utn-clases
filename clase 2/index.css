@@ -1,0 +1,46 @@
+body{
+    background-image: url(./prote.jpg) ;
+}
+
+
+.heading{
+    color: rgb(255, 3, 242);
+    font-family: fantasy ;
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+}
+.heading-h2{
+    font-size: 83px;
+}
+
+#h2-ID{
+    color: red;
+}
+ span{
+    color: rgb(89, 0, 255);
+ }
+ 
+ .span-rojo{
+    color:red
+ }
+
+ #span-red{ 
+    color:rgb(161, 105, 19)
+ }
+
+ .img-proteina{
+    width: 400px;
+    border: 2px solid red;
+    border-top: 10px solid green;
+    border-left: 3px solid brown;
+    border-radius: 16px ;
+ }
+ p{
+    background: white;
+ }
+ .img-proteina2{
+    filter: brightness(0.78);
+ }
