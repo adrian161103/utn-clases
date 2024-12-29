@@ -1,0 +1,294 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+  position: relative;
+
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(
+    0deg,
+    rgba(172, 217, 63, 1) 0%,
+    rgba(218, 141, 39, 1) 50%,
+    rgba(253, 139, 45, 1) 100%
+  );
+}
+
+header h1 {
+  text-align: center;
+}
+
+.logo-header{    
+  width: 90px;
+  position: sticky;
+  top: 0;
+  /* cuando mi elemento que tiene sticky toque el top del buscador este mismo nos seguirá durante todo el contenedor padre. */
+}
+
+.logo-arrow{
+width: 25px;
+cursor: pointer;
+background: fixed;
+position: fixed;
+bottom: 40px;
+right: 10px;
+filter: drop-shadow(2px 4px 3px black);
+}
+
+h1,
+h2,
+h3 {
+  font-family: roboto;
+}
+
+p,
+a {
+  font-family: montserrat;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul li {
+  margin: 10px 16px;
+  border: 1px solid white;
+  border-radius: 15px;
+  box-shadow: 8px 5px 12px 3px black;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: all 0.7s ease 0.1s;
+}
+
+nav ul li a:hover {
+  background: white;
+  color: #333;
+  border-radius: 15px;
+}
+
+section {
+  padding: 12px 10px;
+}
+
+section h2,
+section p,
+section ul,
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+section ul li {
+  padding: 4px 0;
+}
+
+.service-img {
+  width: 100%;
+  margin: auto;
+;
+}
+
+
+#grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+#grid div {
+  transition: all 1s;
+  padding: 10px;
+  border: black 2px solid;
+  border-radius: 10px;
+  background: white;
+  filter: drop-shadow(9px 6px 13px black);
+  /* el filtro agrega sombreado */
+  position: relative;
+/* cambia de posicion la imagen en x o y */
+}
+
+#grid div:hover{
+  scale: 1.05 ;
+  /* scale o escala es para poder hacer mas chico o grande las medidas de la imagen cuando el cursor pasa por encima en otras palabras darle otra medida */
+  cursor: pointer;
+  opacity: 0.7 ;
+  transform: rotate(1.1deg);
+  /* transforma la imagen dandole una rotacion (por grados) */
+  bottom: 3px;
+}
+
+#grid div img.sticker{
+  width: 25%;
+  position: absolute;
+  top: 1px;
+  left: 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* width: 500px; */
+  margin: 0 auto;
+}
+
+form label {
+  margin-bottom: 8px;
+}
+
+form input,
+form textarea {
+  margin-bottom: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 15px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  margin: 5px 10px;
+  width: 90%;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;}
+
+.button-delete {
+  background-color: rgb(170, 37, 37);
+}
+
+.button-delete:hover {
+  background-color: rgb(117, 38, 38);
+}
+
+.example-item{
+  padding: 20px 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
+.wsp {
+  width: 50px;
+  margin: 30px 0px;
+  padding: 0px;
+  background: fixed;
+  cursor: pointer;
+  bottom: 0;
+  position: fixed;
+}
+
+/* media queries */
+/* como inicio desde 425px en adelante */
+@media screen and (min-width:425px) 
+{
+    nav ul{
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+}
+
+/* desde 0 hasta 425px como maximo*/
+
+@media screen and (max-width:425px) 
+{
+    nav ul li{
+      box-shadow: 8px 5px 12px 3px white
+
+    }
+}
+
+/* ejemplo de max y min  seria como un entre 300 y 400, screen and es por buena practica*/
+/* @media screen and (min-width:300px) and (max-width:400px) and (orientation: portrait)
+{
+    section p{
+      color:red
+
+    }
+} */
+
+/* orientacion giratioria vertical= portrait horizontal: landscape*/
+/* @media screen and (min-width:300px) and (max-width:400px) and (orientation: landscape)
+{
+    section p{
+      color:violet
+
+    }
+} */
+
+@media screen and (min-height:360px) and (max-height:600px)
+{
+  nav ul li{
+    box-shadow: 8px 5px 12px 3px rgb(172, 233, 123);
+
+    }
+}
+/* coloca la imagen de manera que por debajo de 615px se vea 1 al 98% y por encima se vean en 45% osea 2 imagenes por seccion/ contenedor */
+@media screen and (min-width:615px) {
+  .service-img {
+    width: 100%;
+    margin: auto;
+}
+#grid div{
+  width: 34%;
+}
+
+  #grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;}
+  }
+    
+  
+
+/* para que en la parte que se escribe en form la lista no quede tan grande y se pueda modificar/ajustar a un buen tamaño */
+
+@media screen and (min-width:1020px) {
+  form {
+    width: 35%;
+  }
+}
+@media screen and (min-width:768px){
+  .button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+    form button{
+      width: 100px;
+    }
+}
+
