@@ -1,0 +1,39 @@
+/* HEADER */
+
+body header nav.navClass{
+    background-color: #333 !important;
+    }
+.nav-link{
+    color:white !important;
+}
+
+.navbar-toggler{
+    filter: invert(1);
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0);
+}
+
+.navbar-brand img{
+    width: 75px;
+}
+
+.w-100{
+    height: 50vh ;
+    margin: auto ;}
+    
+.card-container{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0 15px;
+    margin: 20px 0;
+    justify-content: space-evenly;
+}
+div.card .card-body{
+    padding: 10px ;
+}
+
+@media screen and (max-width: 790px) {
+    .card-container{
+        flex-wrap: wrap; 
+    }
+}

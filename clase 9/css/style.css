@@ -1,0 +1,7 @@
+@import url(./normalize.css);
+@import url(./index.css);
+/* todos los css con sus respectivos estilos se enviaran a este archivo llamado css central asi ahorramos codigo, para esto se necesita el @import url (...)  es un arma de doble filo porque las clases se pueden superponer y aplicar en todo, ya que todos los html se aplican con este estilo, porque toman las reglas que coinciden con la clase*/ 
+
+/* para que esto no pase en cada selector padre que yo quiera colocarle a sus elementos algun estilo le tengo que poner alguna clase que sea unica (por ejemplo index, que seria el nombre propio del archivo) */
+@import url(./contact.css);
+
