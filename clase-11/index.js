@@ -13,7 +13,7 @@ if (!llueve && (barrio && (club || escuela))) {
     console.log("se hace el cumple");
 //! funciona como un *-1
 }
-//else significa si, no (se usa para dar otra ruta de informacion)
+//else significa "si, no" (se usa para dar otra ruta de informacion)
 else{
     console.log("no hay fiesta");
 }
@@ -87,7 +87,7 @@ else {
     console.log("ingrese un dato numerico")
 }
 
-// otra forma mas corta pero no tan recomendada
+// otra forma mas corta pero no tan recomendada type off te devuelve el tipo de dato del valor, en este caso lo usamos para validar.
 
 if(typeof num === "number" && num >=5)
     {console.log("num es mayor o igual a 5")
