@@ -1,0 +1,13 @@
+.red{
+    font-size: 40px;
+    color: red;
+    transition: 0.5s;
+
+}
+
+.black{
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    transition: 0.5s;
+}
