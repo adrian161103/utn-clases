@@ -44,7 +44,7 @@ for (let index = array.length -1; index >= 0; index--) {
 //+= o -= sirve para poder dar diferentes valores ej +=2 (va de 2 en 2)
 
 
-//while seria mientras
+//while seria mientras while sirve para bucles
 
 let numero=0;
 while (numero <= 20) {
