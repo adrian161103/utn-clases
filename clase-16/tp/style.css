@@ -1,0 +1,32 @@
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* el .card es de la clase que puse en js no en httml */
+.card {
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  margin-top: 10px;
+}
+
+/* verifica de que el campo que le llegue bien los datos y se pone verde en este caso, pero podes ponerle mas herramientas */
+input:valid {
+  border-color: green;
+}
+
+/* en caso de que el campo no le lleguen bien los datos se pone rojo en este caso*/
+input:invalid {
+  border-color: red;
+}

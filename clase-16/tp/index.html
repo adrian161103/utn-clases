@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trabajo practido dom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="cards">
+      <h2>cards</h2>
+
+      <div id="card-container">
+        <!-- aqui dentro se añadiran las cards nuevas-->
+      </div>
+
+      <div id="car-form-container">
+        <h3>Añadir nueva card</h3>
+        <form id="card-form">
+          <label for="card-title">titulo:</label>
+          <input type="text" id="card-title" name="card-title" required />
+          <!-- required sirve en caso de que mi estilos no esten personalizados ya que los puede romper sirve como metodo de validacion en caso de que el campo este vacio o falte completar algo -->
+          <br />
+          <label for="card-description">descripción:</label>
+          <input
+            type="text"
+            id="card-description"
+            name="card-description"
+            required
+          />
+          <!-- tambien puede ser un textarea en descripcion -->
+
+          <br />
+          <label for="card-image"> url de imagen:</label>
+          <input
+            type="url"
+            name="card-image"
+            id="card-image"
+            placeholder="https://picsum.photos/200"
+          />
+
+          <br />
+          <h4>personalizacion</h4>
+          <label for="card-bg-color">color de fondo:</label>
+          <input
+            type="color"
+            name="card-bg-color"
+            id="card-bg-color"
+            value="#ffffff"
+          />
+          <br />
+          <label for="card-border-color">color del borde:</label>
+          <input
+            type="color"
+            name="card-border-color"
+            id="card-border-color"
+            value="#000000"
+          />
+          <br />
+          <button type="submit">crear tarjeta</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
