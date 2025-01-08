@@ -31,6 +31,8 @@ function App() {
 
       <ul>
         {/* para iterar(repetir un segmento o conjunto de secciones) se usa map en el cual se intenta desglozar el array ) */}
+        {/* la key se usa para indicar que el elemento es unico (que interactuo por cada uno
+        le genera una identidad unica ej key 1, 2 , 3 , etc) */}
         {task.map((task, index) => <li key={index}>{task.text}</li>) }
       </ul>
     </div>
