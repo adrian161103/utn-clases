@@ -31,4 +31,8 @@ CarouselItem.propTypes = {
   active: propTypes.bool.isRequired,
 };
 
+CarouselItem.defaultProps = {
+interval:"5000",
+};
+
 export default CarouselItem;

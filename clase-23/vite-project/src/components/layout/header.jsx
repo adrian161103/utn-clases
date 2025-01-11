@@ -1,12 +1,16 @@
 import propTypes from "prop-types";
+import planeBrand from "../../../public/img/aerolinea.png";
 
 //proptypes permite defninir las props, pasarles un tip
 //si la prop isrequired significa que es obligatoria
 //recuerda que proptypes va en minuscula y la prop en mayuscula
 
 const Header = ({
-  ImageSrc,
+  //  ImageSrc = planeBrand, manera alternativa de colococar una imagen imnportando la imagen dandole un nomnbre y colocandolo por "default". sin necesidad de colocarle un "isrequierid" eliminando su src del apartado app ya que vendria por defecto y ese no se modificaria.
+
+  ImageSrc = planeBrand,
   imageAlt,
+  // brandUrl es redireccion a la pagina inicial.
   BrandUrl,
   navLinks,
   dropdownTitle,
@@ -54,13 +58,13 @@ const Header = ({
                   {dropdownTitle}
                 </a>
                 <ul className="dropdown-menu">
-                {dropdownOptions.map((option, i) => (
-                  <li key={i}>
-                  <a className="dropdown-item" href={option.url}>
-                    {option.name}
-                  </a>
-                </li>
-                ))}
+                  {dropdownOptions.map((option, i) => (
+                    <li key={i}>
+                      <a className="dropdown-item" href={option.url}>
+                        {option.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </li>
             </ul>
@@ -84,12 +88,31 @@ const Header = ({
 };
 
 Header.propTypes = {
-  ImageSrc: propTypes.string.isRequired,
-  imageAlt: propTypes.string.isRequired,
+  ImageSrc: propTypes.string,
+  imageAlt: propTypes.string,
   BrandUrl: propTypes.string.isRequired,
-  navLinks: propTypes.array.isRequired,
+  //arrayof una propiedad QUE TPERMITE TIPAR de que va  a ser el array, osea que especificamos que tiene dentro el array
+  navLinks: propTypes.arrayOf(
+    //shape es para tipar un objeto (shape es forma) aca se da forma sobre de que es array (que tenemos un objeto dentro del array)
+    propTypes.shape({
+      url: propTypes.string.isRequired,
+      name: propTypes.string.isRequired,
+    })
+  ),
   dropdownTitle: propTypes.string.isRequired,
-  dropdownOptions: propTypes.array.isRequired,
+  dropdownOptions: propTypes.arrayOf(
+    propTypes.shape({
+      url: propTypes.string.isRequired,
+      name: propTypes.string.isRequired,
+    })
+  ),
 };
+//como tipar array de strings:
+//propTypes.arrayOf(propTypes.string).isRequired
 
+//definimos props por defecto
+Header.defaultProps = {
+  Imagealt: "imagen avion",
+  imagesrc: planeBrand,
+};
 export default Header;

@@ -67,7 +67,14 @@ function Carousel({ slides }) {
 }
 
 Carousel.propTypes = {
-  slides: PropTypes.array.isRequired,
+  slides: PropTypes.arrayOf(
+    PropTypes.shape({
+      Image: PropTypes.string.isRequired,
+      Title: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+      Alt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Carousel;

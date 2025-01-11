@@ -1,6 +1,5 @@
 import "../public/css/style.css";
 import Header from "./components/layout/header";
-import logo from "../public/img/aerolinea.png";
 import Carousel from "./components/carousel";
 function App() {
   const navLinks = [
@@ -39,7 +38,6 @@ function App() {
   return (
     <>
       <Header
-        ImageSrc={logo}
         BrandUrl="#"
         imageAlt="aerolinea"
         navLinks={navLinks}
