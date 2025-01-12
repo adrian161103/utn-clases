@@ -70,14 +70,14 @@ section.servicios .servicies-container{
     margin: 18px 0;
 }
 
-.index .servicies-container hr{
+ .servicies-container hr{
     border: none;
     height: 1px;
     background: #422783;
     opacity: 1 !important;
 }
 
-.index section.servicios .even-card{
+ section.servicios .even-card{
     flex-direction: row-reverse;
 }
 
@@ -88,6 +88,63 @@ section.servicios .servicies-container img{
     margin: 15px;
 }
 
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-media {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon img {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+  }
+  
+  .social-icon img:hover {
+    opacity: 0.8;
+  }
+  
+  .footer-bottom {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
 
 
 @media screen and (max-width: 790px) {
@@ -111,7 +168,7 @@ section.servicios .servicies-container img{
             align-items: center;
 
         }
-        .index section.servicios .even-card{
+         section.servicios .even-card{
             flex-direction: column;
             gap:0;
             align-items: center;
@@ -131,11 +188,11 @@ section.servicios .servicies-container img{
     margin-top: 18px; 
      }
     
-    .index section.section-galery .img-playa img{
+     section.section-galery .img-playa img{
         width: 100%;
        
     }
-    .index section.section-galery .img-playa{
+     section.section-galery .img-playa{
         box-shadow: black 3px 3px 3px 0.3px;
         border: gray solid 2px;
         border-radius: 5px;
@@ -144,7 +201,7 @@ section.servicios .servicies-container img{
     }
 }
 @media screen and (min-width:760px) {
-    .index section.section-galery .img-playa{
+     section.section-galery .img-playa{
         width: 40%;
     }
     .div-galeria {
@@ -156,7 +213,7 @@ section.servicios .servicies-container img{
 }
 
 @media screen and (min-width:1000px){
-    .index section.section-galery .img-playa {
+     section.section-galery .img-playa {
         width: 17%;
         gap:20px;
     }

@@ -32,7 +32,7 @@ function Card({
       </div>
   );
 }
-
+//tipado de props
 Card.propTypes = {
   image: propTypes.string,
   imageAlt: propTypes.string.isRequired,

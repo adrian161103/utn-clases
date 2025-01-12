@@ -2,7 +2,9 @@ import "../public/css/style.css";
 import Header from "./components/layout/header";
 import Carousel from "./components/carousel";
 import CardContainer from "./components/CardContainer";
-
+import ServiceContainer from "./components/ServiceContainer";
+import SectionGalery from "./components/SectionGalery";
+import FooterContainer from "./components/FooterContainer";
 function App() {
   const navLinks = [
     { name: "Home", url: "#" },
@@ -39,7 +41,8 @@ function App() {
 
   const cards = [
     {
-      image: "https://cdn.sanity.io/images/5vm5yn1d/pro/5cb1f9400891d9da5a4926d7814bd1b89127ecba-1300x867.jpg?fm=webp&q=80",
+      image:
+        "https://cdn.sanity.io/images/5vm5yn1d/pro/5cb1f9400891d9da5a4926d7814bd1b89127ecba-1300x867.jpg?fm=webp&q=80",
       title: "batman",
       description: "aguante los michis.",
       buttonTitle: "action",
@@ -52,7 +55,6 @@ function App() {
       buttonTitle: "action",
       buttonColor: "black",
       imageAlt: "batman",
-
     },
     {
       title: "batman 3",
@@ -60,7 +62,6 @@ function App() {
       buttonTitle: "action",
       buttonColor: "green",
       imageAlt: "batman",
-
     },
     {
       title: "batman 5",
@@ -70,7 +71,103 @@ function App() {
       imageAlt: "batman",
     },
   ];
-
+  const services = [
+    {
+      title: "transporte ferroviario",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, error. Dolorum culpa similique dicta ipsam quaerat saepe incidunt non aperiam, repudiandae temporibus dolorem perferendis nihil quibusdam at veniam nemo accusantium! At nobis possimus deserunt, beatae ullam molestias reprehenderit fuga dolorem.",
+      image: "./img/playa.jpg",
+    },
+    {
+      title: "transporte ferroviario",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, error. Dolorum culpa similique dicta ipsam quaerat saepe incidunt non aperiam, repudiandae temporibus dolorem perferendis nihil quibusdam at veniam nemo accusantium! At nobis possimus deserunt, beatae ullam molestias reprehenderit fuga dolorem.",
+      image: "./img/playa.jpg",
+    },
+    {
+      title: "transporte ferroviario",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, error. Dolorum culpa similique dicta ipsam quaerat saepe incidunt non aperiam, repudiandae temporibus dolorem perferendis nihil quibusdam at veniam nemo accusantium! At nobis possimus deserunt, beatae ullam molestias reprehenderit fuga dolorem.",
+      image: "./img/playa.jpg",
+    },
+    {
+      title: "transporte ferroviario",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, error. Dolorum culpa similique dicta ipsam quaerat saepe incidunt non aperiam, repudiandae temporibus dolorem perferendis nihil quibusdam at veniam nemo accusantium! At nobis possimus deserunt, beatae ullam molestias reprehenderit fuga dolorem.",
+      image: "./img/playa.jpg",
+    },
+  ];
+  const galery = [
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+    {
+      imgSrc: "./img/playa.jpg",
+      imgAlt: "playa",
+    },
+  ];
+  const links = [
+    {url: "/about", name: "acerca de nosotros"},
+    {url: "/contact", name: "contacto"},
+    {url: "/privacy", name: "Privacy policy"},
+    {url: "/terms", name: "Terms of Service"},
+  ]
+  const social = [
+    {
+      url:"https://facebook.com",
+      image:"https://img.icons8.com/ios-filled/50/000000/facebook-new.png",
+      name:"Facebook",
+    },
+    {
+      url:"https://twitter.com",
+      image:"https://img.icons8.com/ios-filled/50/000000/twitter.png",
+      name:"Twitter",
+    },
+    {
+      url:"https://instagram.com",
+      image:"https://img.icons8.com/ios-filled/50/000000/instagram-new.png",
+      name:"Instagram",
+    },
+    {
+      url:"https://linkedin.com",
+      image:"https://img.icons8.com/ios-filled/50/000000/linkedin.png",
+      name:"LinkedIn",
+    },
+    
+  ]
   return (
     <>
       <Header
@@ -84,6 +181,9 @@ function App() {
       <Carousel slides={slides} />
 
       <CardContainer cards={cards} />
+      <ServiceContainer services={services} />
+      <SectionGalery galery={galery} title={"galeria de imagenes"}/>
+      <FooterContainer links={links} socials={social}/>
     </>
   );
 }
