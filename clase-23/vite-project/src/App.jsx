@@ -5,6 +5,7 @@ import CardContainer from "./components/CardContainer";
 import ServiceContainer from "./components/ServiceContainer";
 import SectionGalery from "./components/SectionGalery";
 import FooterContainer from "./components/layout/FooterContainer";
+import Characters from "./components/api/Characters";
 function App() {
   const navLinks = [
     { name: "Home", url: "#" },
@@ -179,6 +180,7 @@ function App() {
       />
 
       <Carousel slides={slides}/>
+      <Characters/>
       <CardContainer cards={cards} />
       <ServiceContainer services={services} />
       <SectionGalery galery={galery} title={"galeria de imagenes"}/>
