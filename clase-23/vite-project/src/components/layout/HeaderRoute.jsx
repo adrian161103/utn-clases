@@ -1,11 +1,11 @@
 import propTypes from "prop-types";
 import planeBrand from "../../../public/img/aerolinea.png";
-
+import { NavLink } from "react-router-dom"; 
 //proptypes permite defninir las props, pasarles un tip
 //si la prop isrequired significa que es obligatoria
 //recuerda que proptypes va en minuscula y la prop en mayuscula
 
-function Header  ({
+function HeaderRoute  ({
   //  ImageSrc = planeBrand, manera alternativa de colococar una imagen imnportando la imagen dandole un nomnbre y colocandolo por "default". sin necesidad de colocarle un "isrequierid" eliminando su src del apartado app ya que vendria por defecto y ese no se modificaria.
 
   ImageSrc = planeBrand,
@@ -22,11 +22,10 @@ function Header  ({
       {/* <!-- inicio nav --> */}
       <nav className=" navClass navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href={BrandUrl}>
+          {/* importamos una propiedad de react llamada navLink y reemplazamos el href por "to" */}
+          <NavLink className="navbar-brand" to={BrandUrl}>
             <img src={ImageSrc} alt={imageAlt} />{" "}
-          </a>
-          <a  href="#footer">footer</a>
-
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -43,29 +42,29 @@ function Header  ({
               {/* desde aca se itera (usamos map) */}
               {navLinks.map((link, i) => (
                 <li className="nav-item" key={i}>
-                  <a className="nav-link" href={link.url}>
+                  <NavLink className="nav-link" to={link.url}>
                     {link.name}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
 
               <li className="nav-item dropdown">
-                <a
+                <NavLink
                   className="nav-link dropdown-toggle"
-                  href="#"
+                  to="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   {dropdownTitle}
-                </a>
+                </NavLink>
                 <ul className="dropdown-menu">
                   {dropdownOptions &&
                     dropdownOptions.map((option, i) => (
                       <li key={i}>
-                        <a className="dropdown-item" href={option.url}>
+                        <NavLink className="dropdown-item" to={option.url}>
                           {option.name}
-                        </a>
+                        </NavLink>
                       </li>
                     ))}
                 </ul>
@@ -90,7 +89,7 @@ function Header  ({
   );
 };
 
-Header.propTypes = {
+HeaderRoute.propTypes = {
   ImageSrc: propTypes.string,
   imageAlt: propTypes.string,
   BrandUrl: propTypes.string,
@@ -114,8 +113,8 @@ Header.propTypes = {
 //propTypes.arrayOf(propTypes.string).isRequired
 
 //definimos props por defecto
-Header.defaultProps = {
+HeaderRoute.defaultProps = {
   Imagealt: "imagen avion",
   imagesrc: planeBrand,
 };
-export default Header;
+export default HeaderRoute;

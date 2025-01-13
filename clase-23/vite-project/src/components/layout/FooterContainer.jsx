@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 function FooterContainer({ links, socials }) {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-links">
           {/* otra manera de demostrar de que si no llega informacion el mapeo no se ejecuta y queda vacio o sin llenar el espacio. */}
@@ -13,6 +13,7 @@ function FooterContainer({ links, socials }) {
             ))) :(<></>)
           }
         </div>
+        <a href="#carouselExampleCaptions">go to carousel</a>
         <div className="social-media">
            {/* lo que hago con links && y el mapeo es dar a entender de que si me llega una info que lo mapee, en cambio si no me llega nada que no lo haga y no muestre nada  */}
 

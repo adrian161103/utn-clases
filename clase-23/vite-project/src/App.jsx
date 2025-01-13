@@ -4,12 +4,12 @@ import Carousel from "./components/carousel";
 import CardContainer from "./components/CardContainer";
 import ServiceContainer from "./components/ServiceContainer";
 import SectionGalery from "./components/SectionGalery";
-import FooterContainer from "./components/FooterContainer";
+import FooterContainer from "./components/layout/FooterContainer";
 function App() {
   const navLinks = [
     { name: "Home", url: "#" },
     { name: "Productos", url: "#" },
-    { name: "escribinos", url: "#" },
+    { name: "contacto", url: "#" },
     { name: "nosotros", url: "#" },
   ];
   const dropdownOptions = [
@@ -178,8 +178,7 @@ function App() {
         dropdownTitle="menu"
       />
 
-      <Carousel slides={slides} />
-
+      <Carousel slides={slides}/>
       <CardContainer cards={cards} />
       <ServiceContainer services={services} />
       <SectionGalery galery={galery} title={"galeria de imagenes"}/>
