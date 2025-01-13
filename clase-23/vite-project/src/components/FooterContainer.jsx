@@ -4,15 +4,18 @@ function FooterContainer({ links, socials }) {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-links">
-          {/* lo que hago con links && y el mapeo es dar a entender de que si me llega una info que lo mapee, en cambio si no me llega nada que no lo haga y no muestre nada  */}
-          {links &&
+          {/* otra manera de demostrar de que si no llega informacion el mapeo no se ejecuta y queda vacio o sin llenar el espacio. */}
+          {links ?(
             links.map((link, i) => (
               <a key={i} href={link.url}>
                 {link.name}
               </a>
-            ))}
+            ))) :(<></>)
+          }
         </div>
         <div className="social-media">
+           {/* lo que hago con links && y el mapeo es dar a entender de que si me llega una info que lo mapee, en cambio si no me llega nada que no lo haga y no muestre nada  */}
+
           {socials &&
             socials.map((social, i) => (
               <a key={i} href={social.url}>
