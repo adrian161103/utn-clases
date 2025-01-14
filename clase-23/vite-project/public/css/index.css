@@ -120,9 +120,12 @@ section.servicios .servicies-container img {
 }
 /* page */
 .pageSection
-{gap:20px;
+{
   display: flex;
   flex-direction: column;
+}
+.pageSectionGap{
+  gap:20px;
 }
 /* formulario */
 .sectionForm {

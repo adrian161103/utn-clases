@@ -4,9 +4,9 @@ import FooterContainer from "./FooterContainer";
 import propTypes from "prop-types";
 
 
-function Page({ children }) {
+function Page({ children,gap }) {
   return (
-    <section className="pageSection">
+    <section className= {`pageSection ${gap ? "pageSectionGap" : ""}`}>
       <HeaderRoute navLinks={HeaderRouterLinks} />
       {children}
       <FooterContainer />
@@ -15,6 +15,7 @@ function Page({ children }) {
 }
 Page.propTypes = {
   children: propTypes.node.isRequired,
+  gap: propTypes.bool,
 };
 
 export default Page;

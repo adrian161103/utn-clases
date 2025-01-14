@@ -3,7 +3,7 @@ import Characters from "../api/Characters";
 function Products() {
   return (
     <>
-      <Page>
+      <Page gap={true}>
        <Characters/>
       </Page>
     </>
