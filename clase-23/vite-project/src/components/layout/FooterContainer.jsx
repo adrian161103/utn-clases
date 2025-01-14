@@ -13,7 +13,6 @@ function FooterContainer({ links, socials }) {
             ))) :(<></>)
           }
         </div>
-        <a href="#carouselExampleCaptions">go to carousel</a>
         <div className="social-media">
            {/* lo que hago con links && y el mapeo es dar a entender de que si me llega una info que lo mapee, en cambio si no me llega nada que no lo haga y no muestre nada  */}
 

@@ -180,7 +180,6 @@ function App() {
       />
 
       <Carousel slides={slides}/>
-      <Characters/>
       <CardContainer cards={cards} />
       <ServiceContainer services={services} />
       <SectionGalery galery={galery} title={"galeria de imagenes"}/>

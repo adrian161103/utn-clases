@@ -1,11 +1,10 @@
 import propTypes from "prop-types";
 import planeBrand from "../../../public/img/aerolinea.png";
-import { NavLink } from "react-router-dom"; 
+import { NavLink } from "react-router-dom";
 //proptypes permite defninir las props, pasarles un tip
 //si la prop isrequired significa que es obligatoria
 //recuerda que proptypes va en minuscula y la prop en mayuscula
-
-function HeaderRoute  ({
+function HeaderRoute({
   //  ImageSrc = planeBrand, manera alternativa de colococar una imagen imnportando la imagen dandole un nomnbre y colocandolo por "default". sin necesidad de colocarle un "isrequierid" eliminando su src del apartado app ya que vendria por defecto y ese no se modificaria.
 
   ImageSrc = planeBrand,
@@ -15,7 +14,7 @@ function HeaderRoute  ({
   navLinks,
   dropdownTitle,
   dropdownOptions,
-})  {
+}) {
   return (
     //imagen: href de a, src de img, alt de img
     <header>
@@ -47,28 +46,32 @@ function HeaderRoute  ({
                   </NavLink>
                 </li>
               ))}
-
-              <li className="nav-item dropdown">
-                <NavLink
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  {dropdownTitle}
-                </NavLink>
-                <ul className="dropdown-menu">
-                  {dropdownOptions &&
-                    dropdownOptions.map((option, i) => (
-                      <li key={i}>
-                        <NavLink className="dropdown-item" to={option.url}>
-                          {option.name}
-                        </NavLink>
-                      </li>
-                    ))}
-                </ul>
-              </li>
+              {dropdownOptions && (
+                <>
+                  <li className="nav-item dropdown">
+                    <NavLink
+                      className="nav-link dropdown-toggle"
+                      to="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {dropdownTitle}
+                    </NavLink>
+                    (
+                    <ul className="dropdown-menu">
+                      {dropdownOptions.map((option, i) => (
+                        <li key={i}>
+                          <NavLink className="dropdown-item" to={option.url}>
+                            {option.name}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                    )
+                  </li>
+                </>
+              )}
             </ul>
             <form className="d-flex" role="search">
               <input
@@ -87,7 +90,7 @@ function HeaderRoute  ({
       {/* <!-- fin nav --> */}
     </header>
   );
-};
+}
 
 HeaderRoute.propTypes = {
   ImageSrc: propTypes.string,

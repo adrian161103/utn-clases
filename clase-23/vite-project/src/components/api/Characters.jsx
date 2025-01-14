@@ -1,4 +1,5 @@
 import  { useEffect, useState } from "react";
+import CharacterCard from "./CharacterContainer";
 function Characters() {
     const [ characters, setCharacters ] = useState([]);
   const fetchCharacters = () => {
@@ -18,17 +19,12 @@ function Characters() {
     fetchCharacters();
   }, []);
   return (
-    <>
-      <div>
+      <div className="characters-container">
         {characters.map((character, i) => (
             //necesita un contenedor por eso uso <>
-          <div key={i}>
-            <p>{character.name}</p>
-            <img src={character.image} alt="image" />
-          </div>
+            <CharacterCard key={i} character={character}/>
         ))}
       </div>
-    </>
   );
 }
 
