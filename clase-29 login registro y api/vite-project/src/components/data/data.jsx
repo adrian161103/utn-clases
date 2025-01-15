@@ -11,6 +11,14 @@ export const HeaderRouterLinks = [
     url: "/productos",
     name: "Productos",
   },
+  {
+    url: "/login",
+    name: "login",
+  },
+  {
+    url: "/register",
+    name: "register",
+  },
 ];
 
 export const  navLinks = [

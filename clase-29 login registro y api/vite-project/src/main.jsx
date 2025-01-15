@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contact from "./components/pages/Contact.jsx";
 import Products from "./components/pages/Products.jsx";
 import Error from "./components/Error.jsx";
+import Login from "./components/layout/login.jsx";
+import Register from "./components/layout/Register.jsx";
 
 
 //escribimos en objetos el path y el element a utilizar a utilizar para crear las rutas
@@ -24,6 +26,14 @@ const routes =createBrowserRouter([
   {
     path: "/productos",
     element: <Products />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
  
 ]);
