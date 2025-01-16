@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { addUser } from "../api/users/addUser";
 
-const apiUrl =import.meta.env.REACT_APP_BASE_URL_USERS
+const apiUrl  =import.meta.env.VITE_BASE_URL_USERS;
 function RegisterForm() {
   //https://67881315c4a42c9161093c8d.mockapi.io/api/users
   const [formData, setFormData] = useState({
     email: "",
     firstName: "",
     lastName: "",
-    gender: "",
+    gender: "#",
     password: "",
   });
   function handleChange(e) {
@@ -18,15 +18,15 @@ function RegisterForm() {
       //.name no es una propiedad, es una key del objeto que se encuentra en el   input "name" 
       [e.target.name]: e.target.value,
     }); //nos trae los valores de los imputs
-    console.log(formData, apiUrl);
+   
   }
 
 
 
   function sendUser(e) {
     e.preventDefault(); // evitamos que el formulario se recargue y pueda ejecutar la accion sin reinicar la pagina
-    addUser(formData);
-
+    addUser(formData,apiUrl);
+    console.log(apiUrl,formData );
   }
 
   return (
@@ -59,6 +59,8 @@ function RegisterForm() {
 
       <label htmlFor="gender">Sexo</label>
       <select name="gender" value={formData.gender} onChange={handleChange}>
+      <option value="#" selected>seleccione genero</option>
+
         <option value="M">masculino</option>
         <option value="F">femenino</option>
         <option value="NB">no binario</option>

@@ -7,25 +7,33 @@ import Products from "./components/pages/Products.jsx";
 import Error from "./components/Error.jsx";
 import Login from "./components/layout/login.jsx";
 import Register from "./components/layout/Register.jsx";
-
+import { UserProvider } from "./contexts/UsersContext.jsx";
+import ProtectedRoute from "./components/auth/ProtectedRoute.jsx";
 
 //escribimos en objetos el path y el element a utilizar a utilizar para crear las rutas
-const routes =createBrowserRouter([
+const routes = createBrowserRouter([
   {
     //aca definimos la ruta base, "/"
     path: "/",
     //elemento principal
     element: <App />,
     //con error element decidimos como se mostrara el error cuando suceda
-    errorElement: <Error />
+    errorElement: <Error />,
   },
+  {
+    path: "/",
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/productos",
+        element: <Products />,
+      },
+    ],
+  }
+  ,
   {
     path: "/contacto",
     element: <Contact />,
-  },
-  {
-    path: "/productos",
-    element: <Products />,
   },
   {
     path: "/login",
@@ -35,11 +43,12 @@ const routes =createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
- 
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-  {/*  RouterProvider maneja el listado de rutas */}
-    <RouterProvider router={routes}/>
+    <UserProvider>
+      {/*  RouterProvider maneja el listado de rutas */}
+      <RouterProvider router={routes} />
+    </UserProvider>
   </StrictMode>
 );

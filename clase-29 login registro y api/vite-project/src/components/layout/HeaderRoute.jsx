@@ -1,6 +1,8 @@
 import propTypes from "prop-types";
 import planeBrand from "../../../public/img/aerolinea.png";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UsersContext";
 //proptypes permite defninir las props, pasarles un tip
 //si la prop isrequired significa que es obligatoria
 //recuerda que proptypes va en minuscula y la prop en mayuscula
@@ -15,6 +17,14 @@ function HeaderRoute({
   dropdownTitle,
   dropdownOptions,
 }) {
+  const { user, handleLogout } = useContext(UserContext);
+
+  const excludeLoggedLinks = ["login", "register"];
+  const protectedLinks = ["Productos"];
+
+  //aca pregunto, yo tengo user? en caso de tenerlo me quita los links de "login" y "register" en caso de que no tener usuario me quita los links protegidos (en este caso productos)
+  //generamos listados de links excluidos segun login o no
+  const excludeLinks = user ? excludeLoggedLinks : protectedLinks;
   return (
     //imagen: href de a, src de img, alt de img
     <header>
@@ -39,13 +49,16 @@ function HeaderRoute({
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {/* desde aca se itera (usamos map) */}
-              {navLinks.map((link, i) => (
-                <li className="nav-item" key={i}>
-                  <NavLink className="nav-link" to={link.url}>
-                    {link.name}
-                  </NavLink>
-                </li>
-              ))}
+              {/* include, si incluye el nombre con los que tengo registrado, filtrando los links que no queremos que se vean */}
+              {navLinks
+                .filter(link => !excludeLinks.includes(link.name))
+                .map((link, i) => (
+                  <li className="nav-item" key={i}>
+                    <NavLink className="nav-link" to={link.url}>
+                      {link.name}
+                    </NavLink>
+                  </li>
+                ))}
               {dropdownOptions && (
                 <>
                   <li className="nav-item dropdown">
@@ -73,18 +86,8 @@ function HeaderRoute({
                 </>
               )}
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
+          {user && <button onClick={handleLogout}>Logout</button>}
         </div>
       </nav>
       {/* <!-- fin nav --> */}
