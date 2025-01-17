@@ -7,7 +7,7 @@ function ProtectedRoute() {
   if (!user) {
     //navigate redirecciona , en este caso si no hay usuario le envia directo al login
     return <Navigate to="/register" />;
-  } //outlet es la ruta base que se tiene (hijo del elemento)
+  } //outlet es la ruta base que se tiene (hijo del protectedRoute)
   else {
     return <Outlet />;
   }

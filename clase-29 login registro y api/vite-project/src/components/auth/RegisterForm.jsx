@@ -79,6 +79,12 @@ function RegisterForm() {
         <button type="submit">enviar</button>
         <button type="reaset">borrar</button>
       </div>
+
+      {/* llamado a la accion */}
+      <p>
+        ¿ya tienes cuenta?
+        <a href="/login">logeate</a>
+      </p>
     </form>
   );
 }

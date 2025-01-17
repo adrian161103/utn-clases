@@ -77,6 +77,11 @@ const emptyFields = formData.email === "" || formData.password === ""
         <button type="submit" disabled={emptyFields} >enviar</button>
         <button type="reaset">borrar</button>
       </div>
+      {/* llamado a la accion */}
+      <p>
+        ¿no tenes cuenta?
+        <a href="/register">Registrate</a>
+      </p>
     </form>
   );
 }
