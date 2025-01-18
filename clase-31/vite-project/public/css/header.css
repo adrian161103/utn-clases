@@ -1,0 +1,26 @@
+header {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #333;
+
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+header nav ul li {
+  list-style: none;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+a {
+  /* le quita la decoracion por defecto */
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+}

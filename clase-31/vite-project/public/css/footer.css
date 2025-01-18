@@ -1,0 +1,14 @@
+
+footer {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 94%;
+}
+
+  
